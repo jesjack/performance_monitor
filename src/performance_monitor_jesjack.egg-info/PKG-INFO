@@ -1,0 +1,40 @@
+Metadata-Version: 2.4
+Name: performance-monitor-jesjack
+Version: 0.1.0
+Summary: Herramienta para monitorear métricas de ejecución
+Home-page: https://github.com/jesjack/performance_monitor  # Opcional
+Author: jesjack
+Author-email: jesjack25_03@hotmail.com
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.7
+Description-Content-Type: text/markdown
+
+# Performance Monitor
+
+Herramienta para monitorear métricas de ejecución.
+
+## Descripción
+
+Este proyecto es una herramienta para monitorear métricas de ejecución en aplicaciones Python. Permite visualizar la estructura de directorios excluyendo ciertas carpetas y proporciona funcionalidades adicionales para el monitoreo de rendimiento.
+
+## Instalación
+
+Puedes instalar el paquete directamente desde PyPI usando pip:
+```sh
+pip install performance-monitor-jesjack
+```
+
+## Uso
+```python
+from performance_monitor_jesjack import timeit
+@timeit
+def my_function():
+    # Simulación de una función que toma tiempo en ejecutarse
+    import time
+    time.sleep(2)
+    return "Función completada"
+result = my_function()
+print(result)
+```
