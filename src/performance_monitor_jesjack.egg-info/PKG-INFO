@@ -10,6 +10,8 @@ Classifier: License :: OSI Approved :: MIT License
 Classifier: Operating System :: OS Independent
 Requires-Python: >=3.7
 Description-Content-Type: text/markdown
+License-File: LICENSE
+Dynamic: license-file
 
 # Performance Monitor
 
@@ -38,3 +40,19 @@ def my_function():
 result = my_function()
 print(result)
 ```
+El decorador `@timeit` mide el tiempo de ejecución de la función `my_function` y lo guarda en una base de datos local.
+
+## Contribución
+1. Haz un fork del repositorio.
+2. Crea una nueva rama (`git checkout -b feature/nueva-caracteristica`).
+3. Realiza tus cambios y haz commit (`git commit -m 'Añadir nueva característica'`).
+4. Haz push a la rama (`git push origin feature/nueva-caracteristica`).
+5. Crea un Pull Request.
+
+## Licencia
+Este proyecto está bajo la Licencia MIT. Consulta el archivo [LICENSE](LICENSE) para más detalles.
+
+## Contacto
+* Author: jesjack.
+* Email: jesjack25_03@hotmail.com
+* Github: [jesjack](https://github.com/jesjack)

@@ -10,7 +10,7 @@ Este proyecto es una herramienta para monitorear métricas de ejecución en apli
 
 Puedes instalar el paquete directamente desde PyPI usando pip:
 ```sh
-pip install performance-monitor-jesjack
+pip install -i https://test.pypi.org/simple/ performance-monitor-jesjack
 ```
 
 ## Uso
