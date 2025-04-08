@@ -1,10 +1,12 @@
 from asyncio import iscoroutinefunction
+from datetime import datetime
 from functools import wraps
 from time import time
 
 from sqlalchemy import create_engine
 from sqlalchemy.orm import Session
 
+from src.performance_monitor_jesjack.models.base import Base
 from src.performance_monitor_jesjack.models.execution_metric import ExecutionMetric
 from src.performance_monitor_jesjack.models.execution_session import ExecutionSession
 
@@ -21,6 +23,7 @@ class ExecutionTracker:
     def _initialize(self):
         self.db_uri = "execution_data.db"
         self.engine = create_engine(f'sqlite:///{self.db_uri}')
+        Base.metadata.create_all(self.engine)
         self.execution_session = ExecutionSession()
         pass
 
@@ -31,7 +34,7 @@ class ExecutionTracker:
         :param start_time:
         :return:
         """
-        end_time = time()
+        end_time = datetime.now()
 
         with Session(self.engine) as session:
             ExecutionMetric.add_metric(session,
@@ -50,13 +53,13 @@ class ExecutionTracker:
         """
         @wraps(func)
         def sync_wrapper(*args, **kwargs):
-            start_time = time()
+            start_time = datetime.now()
             result = func(*args, **kwargs)
             return self._mid_wrapper(result, start_time, func)
 
         @wraps(func)
         async def async_wrapper(*args, **kwargs):
-            start_time = time()
+            start_time = datetime.now()
             result = await func(*args, **kwargs)
             return self._mid_wrapper(result, start_time, func)
 

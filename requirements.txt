@@ -1,1 +1,5 @@
 sqlalchemy~=2.0.40
+plotly~=6.0.1
+networkx~=3.2.1
+numpy~=2.0.2
+pandas~=2.2.3

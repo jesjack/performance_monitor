@@ -14,6 +14,7 @@ pip install -i https://test.pypi.org/simple/ performance-monitor-jesjack
 ```
 
 ## Uso
+* ```@timeit```
 ```python
 from performance_monitor_jesjack import timeit
 @timeit
@@ -26,6 +27,35 @@ result = my_function()
 print(result)
 ```
 El decorador `@timeit` mide el tiempo de ejecución de la función `my_function` y lo guarda en una base de datos local.
+
+* ```@timeit.show```
+```python
+from performance_monitor_jesjack import timeit
+@timeit.show
+def my_function():
+    # Simulación de una función que toma tiempo en ejecutarse
+    import time
+    time.sleep(2)
+    return "Función completada"
+result = my_function()
+print(result)
+```
+El decorador `@timeit.show` mide el tiempo de ejecución de la función `my_function` y muestra el resultado en un gráfico como este:
+![](img.png)
+
+* ```show_graph()```
+```python
+from performance_monitor_jesjack import show_graph
+show_graph()
+```
+El método `show_graph()` muestra un gráfico de barras con los tiempos de ejecución de las funciones monitoreadas.
+
+* ```show_graph.on_exit()```
+```python
+from performance_monitor_jesjack import show_graph
+show_graph.on_exit()
+```
+El método `show_graph.on_exit()` muestra un gráfico de barras con los tiempos de ejecución de las funciones monitoreadas al salir del programa.
 
 ## Contribución
 1. Haz un fork del repositorio.
